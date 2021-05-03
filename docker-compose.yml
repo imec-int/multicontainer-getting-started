@@ -1,5 +1,14 @@
 version: '2'
 services:
+  wificonnect:
+    build: ./wifi-connect
+    network_mode: "host"
+    labels:
+        io.balena.features.dbus: '1'
+    cap_add:
+        - NET_ADMIN
+    environment:
+        DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
   frontend:
     build: ./frontend
     expose:
@@ -15,3 +24,10 @@ services:
     build: ./data
     expose:
       - "8080"
+  sound:
+    build: ./kernel-module-build
+    privileged: true
+    devices:
+      - "/dev/snd:/dev/snd"
+    labels:
+      io.balena.features.kernel-modules: '1'
