@@ -1,0 +1,9 @@
+[submodule "I2S-raspberry-pi-dBa-meter"]
+	path = I2S-raspberry-pi-dBa-meter
+	url = https://github.com/Makerspace-Antwerpen/I2S-raspberry-pi-dBa-meter
+[submodule "kernel-module-build"]
+	path = kernel-module-build
+	url = https://github.com/imec-int/kernel-module-build
+[submodule "wifi-connect"]
+	path = wifi-connect
+	url = https://github.com/balena-os/wifi-connect
